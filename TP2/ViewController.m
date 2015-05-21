@@ -16,7 +16,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    
+    NSError *error;
+    NSURL *url = [[NSURL alloc] initWithString:@"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"];
+    NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
+    NSMutableDictionary *vehicles = [NSJSONSerialization
+                                       JSONObjectWithData:data
+                                       options:NSJSONReadingMutableContainers
+                                       error:&error];
+    
+    if( error ){
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    else {
+        for ( NSDictionary *vehicle in vehicles ){
+            for (NSString* attr in vehicle) {
+                        NSLog(@"%@", vehicle[attr]);
+            }
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

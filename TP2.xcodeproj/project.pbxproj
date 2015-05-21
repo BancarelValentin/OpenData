@@ -15,6 +15,7 @@
 		2810C53F1B0DAE7B00ADCBF4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2810C53D1B0DAE7B00ADCBF4 /* LaunchScreen.xib */; };
 		2810C54B1B0DAE7B00ADCBF4 /* TP2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810C54A1B0DAE7B00ADCBF4 /* TP2Tests.m */; };
 		2810C5561B0DAEB700ADCBF4 /* Vehicule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810C5551B0DAEB700ADCBF4 /* Vehicule.m */; };
+		2810C5581B0DB58400ADCBF4 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 2810C5571B0DB58400ADCBF4 /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		2810C54A1B0DAE7B00ADCBF4 /* TP2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TP2Tests.m; sourceTree = "<group>"; };
 		2810C5541B0DAEB700ADCBF4 /* Vehicule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicule.h; sourceTree = "<group>"; };
 		2810C5551B0DAEB700ADCBF4 /* Vehicule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicule.m; sourceTree = "<group>"; };
+		2810C5571B0DB58400ADCBF4 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		2810C5221B0DAE7A00ADCBF4 = {
 			isa = PBXGroup;
 			children = (
+				2810C5571B0DB58400ADCBF4 /* data.json */,
 				2810C52D1B0DAE7B00ADCBF4 /* TP2 */,
 				2810C5471B0DAE7B00ADCBF4 /* TP2Tests */,
 				2810C52C1B0DAE7B00ADCBF4 /* Products */,
@@ -207,6 +210,7 @@
 				2810C53A1B0DAE7B00ADCBF4 /* Main.storyboard in Resources */,
 				2810C53F1B0DAE7B00ADCBF4 /* LaunchScreen.xib in Resources */,
 				2810C53C1B0DAE7B00ADCBF4 /* Images.xcassets in Resources */,
+				2810C5581B0DB58400ADCBF4 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
