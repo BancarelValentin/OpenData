@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Vehicule.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    NSMutableArray* myVehicles = [[NSMutableArray alloc]init];
     
     NSError *error;
     NSURL *url = [[NSURL alloc] initWithString:@"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"];
@@ -31,9 +33,8 @@
     }
     else {
         for ( NSDictionary *vehicle in vehicles ){
-            for (NSString* attr in vehicle) {
-                        NSLog(@"%@", vehicle[attr]);
-            }
+            Vehicule *v = [[Vehicule alloc] initFromDictionnary:vehicle];
+            [myVehicles addObject:v];
         }
     }
 }
