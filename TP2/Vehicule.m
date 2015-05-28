@@ -170,9 +170,9 @@
             self.typ_boite_nb_rapp = data[@"typ_boite_nb_rapp"];
         }
         
-        for (NSString* attr in data) {
-            NSLog(@"%@ = %@",attr, data[attr]);
-        }
+//        for (NSString* attr in data) {
+//            NSLog(@"%@ = %@",attr, data[attr]);
+//        }
         
     }
     return self;
