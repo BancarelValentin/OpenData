@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "Vehicule.h"
 
+#import "Loader.h"
+
 @interface ViewController ()
 
 @end
@@ -19,20 +21,11 @@
     [super viewDidLoad];
     
     NSMutableArray* myVehicles = [[NSMutableArray alloc]init];
+    NSMutableDictionary *vehiclesDict = [[Loader alloc]getDictFromJSONUrl:@"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"];
     
-    NSError *error;
-    NSURL *url = [[NSURL alloc] initWithString:@"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"];
-    NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
-    NSMutableDictionary *vehicles = [NSJSONSerialization
-                                       JSONObjectWithData:data
-                                       options:NSJSONReadingMutableContainers
-                                       error:&error];
-    
-    if( error ){
-        NSLog(@"%@", [error localizedDescription]);
-    }
-    else {
-        for ( NSDictionary *vehicle in vehicles ){
+        
+    if (vehiclesDict) {
+        for ( NSDictionary *vehicle in vehiclesDict ){
             Vehicule *v = [[Vehicule alloc] initFromDictionnary:vehicle];
             [myVehicles addObject:v];
         }
