@@ -35,7 +35,7 @@
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     self.myVehicles = [[NSMutableArray alloc]init];
-    NSMutableDictionary *vehiclesDict = [[Loader alloc]getDictFromJSONUrl:@"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"];
+    NSMutableDictionary *vehiclesDict = [[Loader alloc]getDictFromJSONUrl:@"http://etudiants.openium.fr/lic/mars-2014-partial.json"];
     
     
     if (vehiclesDict) {
@@ -43,6 +43,9 @@
             Vehicule *v = [[Vehicule alloc] initFromDictionnary:vehicle];
             [self.myVehicles addObject:v];
         }
+    }else{
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You don't have an internet connection. In order to use the applicationm please go to Settings > Wi-Fi qnd connect to a networan" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
     }
 
 }
@@ -79,7 +82,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     Vehicule *vehicule = self.myVehicles[indexPath.row];
-    cell.textLabel.text = [vehicule Carrosserie];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",[vehicule lib_mrq],[vehicule lib_mod]];
     return cell;
 }
 

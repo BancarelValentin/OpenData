@@ -21,7 +21,7 @@
     [super viewDidLoad];
     
     NSMutableArray* myVehicles = [[NSMutableArray alloc]init];
-    NSMutableDictionary *vehiclesDict = [[Loader alloc]getDictFromJSONUrl:@"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"];
+    NSMutableDictionary *vehiclesDict = [[Loader alloc]getDictFromJSONUrl:@"http://etudiants.openium.fr/lic/mars-2014-partial.json"];
     
         
     if (vehiclesDict) {
@@ -29,6 +29,9 @@
             Vehicule *v = [[Vehicule alloc] initFromDictionnary:vehicle];
             [myVehicles addObject:v];
         }
+    }else{
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Info" message:@"No WIFI" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
     }
 }
 
