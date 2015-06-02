@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 bancarelvalentin. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface Loader : NSObject
 
--(id)getDictFromJSONUrl:(NSString*)url;
 @end
