@@ -11,16 +11,6 @@
 
 @interface DetailViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *lbMarque;
-@property (weak, nonatomic) IBOutlet UILabel *lbModele;
-@property (weak, nonatomic) IBOutlet UILabel *lbCodeNational;
-@property (weak, nonatomic) IBOutlet UILabel *lbCarburant;
-@property (weak, nonatomic) IBOutlet UILabel *lbPowerAdmin;
-@property (weak, nonatomic) IBOutlet UILabel *lbPowerMax;
-@property (weak, nonatomic) IBOutlet UILabel *lbC02;
-@property (weak, nonatomic) IBOutlet UILabel *lbCarrosserie;
-@property (weak, nonatomic) IBOutlet UILabel *lbGamme;
-
 @end
 
 @implementation DetailViewController
@@ -48,8 +38,6 @@
         self.lbC02.text = [NSString stringWithFormat:@"%d", ((Vehicule *)self.detailItem).co2];
         self.lbCarrosserie.text = ((Vehicule *)self.detailItem).Carrosserie;
         self.lbGamme.text = ((Vehicule *)self.detailItem).gamme;
-        
-        self.detailDescriptionLabel.text = [self.detailItem description];
     }
 }
 

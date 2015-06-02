@@ -18,6 +18,7 @@
 		28EECAE11B1C5349001FD434 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EECADD1B1C5349001FD434 /* MasterViewController.m */; };
 		28EECAE21B1C5349001FD434 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EECADF1B1C5349001FD434 /* DetailViewController.m */; };
 		28EECAE31B1C5349001FD434 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EECAE01B1C5349001FD434 /* Main.storyboard */; };
+		E8A423031B1E222500C112C7 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A423021B1E222500C112C7 /* CustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		28EECADE1B1C5349001FD434 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		28EECADF1B1C5349001FD434 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		28EECAE01B1C5349001FD434 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E8A423011B1E222500C112C7 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		E8A423021B1E222500C112C7 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				2810C52E1B0DAE7B00ADCBF4 /* Supporting Files */,
 				2810C5541B0DAEB700ADCBF4 /* Vehicule.h */,
 				2810C5551B0DAEB700ADCBF4 /* Vehicule.m */,
+				E8A423011B1E222500C112C7 /* CustomTableViewCell.h */,
+				E8A423021B1E222500C112C7 /* CustomTableViewCell.m */,
 			);
 			path = TP2;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				28EECAE11B1C5349001FD434 /* MasterViewController.m in Sources */,
 				2830D8081B16F96800DCBD87 /* Loader.m in Sources */,
 				28EECAE21B1C5349001FD434 /* DetailViewController.m in Sources */,
+				E8A423031B1E222500C112C7 /* CustomTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

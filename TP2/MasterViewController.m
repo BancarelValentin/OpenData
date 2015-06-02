@@ -35,7 +35,7 @@
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     self.myVehicles = [[NSMutableArray alloc]init];
-    NSMutableDictionary *vehiclesDict = [[Loader alloc]getDictFromJSONUrl:@"http://etudiants.openium.fr/lic/mars-2014-partial.json"];
+    NSMutableDictionary *vehiclesDict = [[Loader alloc]getDictFromJSONUrl:@"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"];
     
     
     if (vehiclesDict) {
@@ -79,10 +79,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     Vehicule *vehicule = self.myVehicles[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",[vehicule lib_mrq],[vehicule lib_mod]];
+    cell.carIdLabel.text = [NSString stringWithFormat:@"%@ %@",[vehicule lib_mrq],[vehicule lib_mod]];
+    cell.carDescLabel.text = [NSString stringWithFormat:@"%@",[vehicule cnit]];
     return cell;
 }
 
