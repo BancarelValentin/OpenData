@@ -13,7 +13,7 @@
 
 @property id delegate;
 
--(void)giveDataToDelegate:(id)delegate;
+-(void)giveBackDataToDelegate:(id)delegate;
 
 @end
 

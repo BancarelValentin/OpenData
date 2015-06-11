@@ -23,7 +23,7 @@
 //        create an interface "dataHandler" with a method abble to get the vehicles dic, make the MVC implementing it and call the said method in didFinih Downloading
 @implementation Loader
 
--(void)giveDataToDelegate:(id)delegate{
+-(void)giveBackDataToDelegate:(id)delegate{
     self.delegate = delegate;
     [self getDictFromJSONUrl:@"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"];
 }
@@ -43,6 +43,7 @@
         });
         
     }];
+    //Si methods not called then LVCtrl isnt binded to that NSURLSession
     [downloadTask resume];
     
 }

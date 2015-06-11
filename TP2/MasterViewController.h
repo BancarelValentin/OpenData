@@ -12,7 +12,7 @@
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController <vehicleHandler,NSURLSessionDownloadDelegate>
+@interface MasterViewController : UITableViewController <vehicleHandler>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
