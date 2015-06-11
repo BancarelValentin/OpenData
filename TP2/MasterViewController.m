@@ -28,8 +28,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+//The V1 should be use when the starting view is the SplitScreenView in the Main.storyboard. In this case no progress bar will be shown during the doznloading.
+//The V2 should be use when the starting view is the LoadingView in the Main.storyboard. In this case a  progress bar will be shown during the downloading. Then the SplitScreenView will be shown zith a path to a JSON file given in parameter.
+
+//V1
+    Loader_Old *loader2 = [[Loader_Old alloc]init];
+    [loader2 downloadFile:[NSURL URLWithString: @"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"] for:self];
+
+//V2
+    //TO-DO: Get the path to the JSON file from the previous viewctrl and put it in self.pathToJSON
+    self.pathToJSON = @"";
     Loader *loader = [[Loader alloc]init];
-    [loader giveBackDataToDelegate:self];
+    [loader instanciateVehiclesFromJSON:[NSURL URLWithString:self.pathToJSON] andGiveThemTo:self];
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes{

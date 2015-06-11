@@ -7,6 +7,7 @@
 //
 
 #import "LoadingViewController.h"
+#import "MasterViewController.h"
 #import "Loader.h"
 
 @interface LoadingViewController ()
@@ -17,39 +18,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self.loadingProgressBar setProgress:0];
     
     Loader *loader = [[Loader alloc]init];
-    [loader giveBackDataToDelegate:self];
-    
-//    [self performSegueWithIdentifier:@"showMasterView" sender:self];
+    [loader downloadFile:[NSURL URLWithString: @"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"] for:self];
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes{
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite{
-    
+    float percentDL = totalBytesWritten / totalBytesExpectedToWrite;
+    [self.loadingProgressBar setProgress:percentDL];
 }
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location{
-    
+    //TO-DO: Launch the master view controller and give him the file location
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

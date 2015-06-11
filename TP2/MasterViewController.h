@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CustomTableViewCell.h"
 #import "Loader.h"
+#import "Loader_Old.h"
 
 @class DetailViewController;
 
 @interface MasterViewController : UITableViewController <vehicleHandler>
 
+@property NSString* pathToJSON;
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
 -(void)receiveVehicles:(NSArray*)vehicles;
