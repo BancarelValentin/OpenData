@@ -23,10 +23,15 @@
 //        create an interface "dataHandler" with a method abble to get the vehicles dic, make the MVC implementing it and call the said method in didFinih Downloading
 @implementation Loader
 
--(id)getDictFromJSONUrl:(NSString *)urlString{
+-(void)giveDataToDelegate:(id)delegate{
+    self.delegate = delegate;
+    [self getDictFromJSONUrl:@"http://etudiants.openium.fr/lic/mars-2014-partial-small.json"];
+}
+
+-(void)getDictFromJSONUrl:(NSString *)urlString{
     
     
-    NSURL *url = [NSURL URLWithString:@"http://etudiants.openium.fr/lic/mars-2014-partial.json"];
+    NSURL *url = [NSURL URLWithString: urlString];
     
     NSDate* startDate = [NSDate date];
     
@@ -40,25 +45,6 @@
     }];
     [downloadTask resume];
     
-    
-    
-    NSError *error;
-    
-    NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
-    if( error ){
-        NSLog(@"%@", [error description]);
-        return nil;
-    }
-    
-    NSMutableDictionary *dict = [NSJSONSerialization
-                                     JSONObjectWithData:data
-                                     options:NSJSONReadingMutableContainers
-                                     error:&error];
-    if( error ){
-        NSLog(@"%@", [error description]);
-        return nil;
-    }
-    return dict;
 }
 
 - (void)didFinishDownloading:(NSData*)jsonData startDate:(NSDate*) startDate error:(NSError*) downloadError{
@@ -66,8 +52,7 @@
     NSError *serializationError = nil;
     NSMutableArray* voituresTelechargees = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&serializationError];
     
-    NSDate* endDate = [NSDate date];
-    NSTimeInterval downloadingIntervale = [endDate timeIntervalSinceDate:startDate];
+    NSTimeInterval downloadingIntervale = [[NSDate date] timeIntervalSinceDate:startDate];
     
     //Creating Vehicles
     startDate = [NSDate date];
@@ -78,5 +63,11 @@
         [vehicles addObject:tmp];
     }
     
+    NSTimeInterval instancingIntervale = [[NSDate date] timeIntervalSinceDate:startDate];
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Stats" message:[NSString stringWithFormat:@"Il a fallut %f secondes pour télécharger le fichier et %f secondes pour instancier tous les objets",downloadingIntervale,instancingIntervale] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+    
+    [self.delegate receiveVehicles:vehicles];
 }
 @end

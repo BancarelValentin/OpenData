@@ -11,4 +11,12 @@
 
 @interface Loader : NSObject
 
+@property id delegate;
+
+-(void)giveDataToDelegate:(id)delegate;
+
+@end
+
+@protocol vehicleHandler
+- (void)receiveVehicles:(NSArray *)vehicles;
 @end

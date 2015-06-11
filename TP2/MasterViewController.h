@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomTableViewCell.h"
+#import "Loader.h"
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController <vehicleHandler,NSURLSessionDownloadDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
+
+-(void)receiveVehicles:(NSArray*)vehicles;
 
 @end
 

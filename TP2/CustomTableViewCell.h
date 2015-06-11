@@ -11,5 +11,6 @@
 @interface CustomTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *carIdLabel;
 @property (weak, nonatomic) IBOutlet UILabel *carDescLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 
 @end

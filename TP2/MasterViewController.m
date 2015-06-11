@@ -9,13 +9,10 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "Vehicule.h"
-#import "Loader.h"
 
 @interface MasterViewController ()
 
-@property NSMutableArray* vehicles;
-@property NSTimeInterval downloadingIntervale;
-@property NSTimeInterval instancingIntervale;
+@property NSArray* vehicles;
 
 @end
 
@@ -31,72 +28,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    NSURL *url = [NSURL URLWithString:@"http://etudiants.openium.fr/lic/mars-2014-partial.json"];
-    
-    NSDate* startDate = [NSDate date];
-    
-    self.vehicles = [[NSMutableArray alloc] init];
-    [NSURLSession sharedSession];
-    NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self didFinishDownloading:data startDate:startDate error:error];
-        });
-        
-    }];
-    [downloadTask resume];
-    
-    
-//    
-//    NSError *error;
-//    
-//    NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
-//    if( error ){
-//        NSLog(@"%@", [error description]);
-//        return nil;
-//    }
-//    
-//    NSMutableDictionary *dict = [NSJSONSerialization
-//                                 JSONObjectWithData:data
-//                                 options:NSJSONReadingMutableContainers
-//                                 error:&error];
-//    if( error ){
-//        NSLog(@"%@", [error description]);
-//        return nil;
-//    }
-//    return dict;
+    Loader *loader = [[Loader alloc]init];
+    [loader giveDataToDelegate:self];
 }
 
-- (void)didFinishDownloading:(NSData*)jsonData startDate:(NSDate*) startDate error:(NSError*) downloadError{
-    
-    NSError *serializationError = nil;
-    NSMutableArray* voituresTelechargees = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&serializationError];
-    
-    NSDate* endDate = [NSDate date];
-    self.downloadingIntervale = [endDate timeIntervalSinceDate:startDate];
-    
-    //Creating Vehicles
-    startDate = [NSDate date];
-    int i = 0;
-    for (NSMutableDictionary* voiture in voituresTelechargees) {
-        i++;
-        Vehicule* tmp = [[Vehicule alloc] initFromDictionnary:voiture];
-        [self.vehicles addObject:tmp];
-        NSLog(@"%d: %@",i,tmp);
-    }
-    
-    endDate = [NSDate date];
-    self.instancingIntervale = [endDate timeIntervalSinceDate:startDate];
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes{
     
 }
 
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite{
+    
+}
 
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location{
+    
+}
+
+-(void)receiveVehicles:(NSArray *)vehicles{
+    self.vehicles=vehicles;
+    [self.tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Segues
