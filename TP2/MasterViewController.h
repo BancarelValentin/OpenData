@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CustomTableViewCell.h"
 #import "Loader.h"
-#import "Loader_Old.h"
 
 @class DetailViewController;
 

@@ -20,7 +20,6 @@
 		28EECAE31B1C5349001FD434 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EECAE01B1C5349001FD434 /* Main.storyboard */; };
 		E8A423031B1E222500C112C7 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A423021B1E222500C112C7 /* CustomTableViewCell.m */; };
 		E8D313A61B29905E00DECEB8 /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D313A51B29905E00DECEB8 /* LoadingViewController.m */; };
-		E8EA4CF11B29D4D600D76DC2 /* Loader_Old.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EA4CF01B29D4D600D76DC2 /* Loader_Old.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +57,6 @@
 		E8A423021B1E222500C112C7 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		E8D313A41B29905E00DECEB8 /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
 		E8D313A51B29905E00DECEB8 /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
-		E8EA4CEF1B29D4D600D76DC2 /* Loader_Old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loader_Old.h; sourceTree = "<group>"; };
-		E8EA4CF01B29D4D600D76DC2 /* Loader_Old.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loader_Old.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +106,6 @@
 				28EECAE01B1C5349001FD434 /* Main.storyboard */,
 				2830D8061B16F96800DCBD87 /* Loader.h */,
 				2830D8071B16F96800DCBD87 /* Loader.m */,
-				E8EA4CEF1B29D4D600D76DC2 /* Loader_Old.h */,
-				E8EA4CF01B29D4D600D76DC2 /* Loader_Old.m */,
 				2810C5321B0DAE7B00ADCBF4 /* AppDelegate.h */,
 				2810C5331B0DAE7B00ADCBF4 /* AppDelegate.m */,
 				2810C53B1B0DAE7B00ADCBF4 /* Images.xcassets */,
@@ -260,7 +255,6 @@
 				2830D8081B16F96800DCBD87 /* Loader.m in Sources */,
 				28EECAE21B1C5349001FD434 /* DetailViewController.m in Sources */,
 				E8A423031B1E222500C112C7 /* CustomTableViewCell.m in Sources */,
-				E8EA4CF11B29D4D600D76DC2 /* Loader_Old.m in Sources */,
 				E8D313A61B29905E00DECEB8 /* LoadingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

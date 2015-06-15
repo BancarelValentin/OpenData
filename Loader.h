@@ -15,7 +15,7 @@
 -(void)instanciateVehiclesFromJSON:(NSURL*)url andGiveThemTo:(id)delegate;
 
 @end
-
 @protocol vehicleHandler
 - (void)receiveVehicles:(NSArray *)vehicles;
+-(void)showInstancingTime:(NSNumber*)time;
 @end

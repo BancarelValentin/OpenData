@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cpw-JU-SF3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cpw-JU-SF3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Loading View Controller-->
@@ -24,7 +24,7 @@
                     </view>
                     <connections>
                         <outlet property="loadingProgressBar" destination="oQc-dJ-OEH" id="eFJ-rH-9l1"/>
-                        <segue destination="H1p-Uh-vWS" kind="presentation" identifier="showMasterView" modalPresentationStyle="fullScreen" id="uOf-d8-X6S"/>
+                        <segue destination="H1p-Uh-vWS" kind="show" identifier="showMasterView" id="dvF-sf-MHV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtU-7J-imT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -229,16 +229,12 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7jG-z6-8Z9">
-                                            <rect key="frame" x="8" y="19" width="223" height="2"/>
-                                        </progressView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="carDescLabel" destination="1u9-s8-Hao" id="NGN-g5-6JQ"/>
                                     <outlet property="carIdLabel" destination="FJN-dP-rWg" id="b3G-2B-jOW"/>
-                                    <outlet property="progressBar" destination="7jG-z6-8Z9" id="nMY-Ee-vk4"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
@@ -272,6 +268,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tll-UG-LXB"/>
+        <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>
