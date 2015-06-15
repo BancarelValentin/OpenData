@@ -29,9 +29,8 @@
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite{
     
-    NSNumber *percentDL = [NSNumber numberWithFloat: (totalBytesWritten / totalBytesExpectedToWrite)];
+    NSNumber *percentDL = [NSNumber numberWithFloat: ((float)bytesWritten / (float)totalBytesExpectedToWrite)];
     [self performSelectorOnMainThread:@selector(setProgressBarToValue:) withObject:percentDL waitUntilDone:NO];
-    NSLog(@"%lld",(totalBytesWritten / totalBytesExpectedToWrite));
 
 }
 

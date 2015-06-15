@@ -15,7 +15,8 @@
 -(void)instanciateVehiclesFromJSON:(NSURL*)url andGiveThemTo:(id)delegate;
 
 @end
-@protocol vehicleHandler
+
+@protocol vehicleHandler //Doit etre implementer par le MasterViewController pour recevoir les vehicules et afficher la pop-up pour le temp d'instanciation
 - (void)receiveVehicles:(NSArray *)vehicles;
 -(void)showInstancingTime:(NSNumber*)time;
 @end
